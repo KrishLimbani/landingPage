@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0066FF;
+  --color-brand-navy: #0A2540;
+  --color-brand-light: #00D4FF;
+  --color-bg-light: #F8FAFC;
+  --color-text-main: #0A2540;
+  --color-text-muted: #475569;
+
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap');
+
+  body {
+    @apply font-body text-text-main bg-white antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-20 lg:py-32;
+  }
+
+  .btn-primary {
+    @apply bg-brand-blue text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-brand-blue/90 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-brand-navy text-brand-navy px-8 py-4 rounded-full font-semibold transition-all hover:bg-brand-navy hover:text-white active:scale-95;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl;
+  }
+}
